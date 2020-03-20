@@ -97,6 +97,9 @@ public class ScannerActivity extends ReactActivity {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                WritableMap params = Arguments.createMap();
+                params.putString("method", "onCancle");
+                ScannerActivity.this.sendEvent(ScannerActivity.this.getReactInstanceManager().getCurrentReactContext(), "NumberPlateScannerResult", params);
                 ScannerActivity.this.finish();
             }
         });
@@ -121,8 +124,10 @@ public class ScannerActivity extends ReactActivity {
                 Log.d(TAG, "btnScan: ");
                 tvNumberPlateCode.setText("");
                 Log.d(TAG, "onCreate: " + tvNumberPlateCode.getText().toString());
-                scan = true;
-            }
+                WritableMap params = Arguments.createMap();
+                params.putString("method", "onRescan");
+                ScannerActivity.this.sendEvent(ScannerActivity.this.getReactInstanceManager().getCurrentReactContext(), "NumberPlateScannerResult", params);
+                scan = true;            }
         });
 
         flash.setOnClickListener(new View.OnClickListener() {
