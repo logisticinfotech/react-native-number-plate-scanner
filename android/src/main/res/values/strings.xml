@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="low_storage_error">Low Storage</string>
+    <string name="no_camera_permission">Required camera permission</string>
+    <string name="ok">OK</string>
+</resources>
