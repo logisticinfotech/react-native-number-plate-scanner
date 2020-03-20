@@ -221,8 +221,8 @@ public class ScannerActivity extends ReactActivity {
             public void onDetect(String fullNumberPlate) {
                 scan = false;
 //                tvNumberPlateCode.setText(fullNumberPlate.substring(fullNumberPlate.length()-8));
-                tvNumberPlateCode.setText(fullNumberPlate);
                 numberPlateText=fullNumberPlate;
+                tvNumberPlateCode.setText(fullNumberPlate);
 
 //                mPreview.stop();
             }
