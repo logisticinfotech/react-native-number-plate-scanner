@@ -112,6 +112,7 @@ public class ScannerActivity extends ReactActivity {
                 Log.d(TAG, "onCreate: " + tvNumberPlateCode.getText().toString());
                 scan = true;
                 WritableMap params = Arguments.createMap();
+                params.putString("method", "onDone");
                 params.putString("number", numberPlateText);
                 ScannerActivity.this.sendEvent(ScannerActivity.this.getReactInstanceManager().getCurrentReactContext(), "NumberPlateScannerResult", params);
                 ScannerActivity.this.finish();
@@ -225,11 +226,10 @@ public class ScannerActivity extends ReactActivity {
             @Override
             public void onDetect(String fullNumberPlate) {
                 scan = false;
-//                tvNumberPlateCode.setText(fullNumberPlate.substring(fullNumberPlate.length()-8));
-                numberPlateText=fullNumberPlate;
-                tvNumberPlateCode.setText(fullNumberPlate);
-
-//                mPreview.stop();
+                String substring = fullNumberPlate.substring(fullNumberPlate.length() - 4);
+                numberPlateText=substring;
+                tvNumberPlateCode.setText(substring);
+//                tvNumberPlateCode.setText(fullNumberPlate);
             }
         };
         context = getApplicationContext();

@@ -1,7 +1,7 @@
 {
   "name": "@logisticinfotech/react-native-number-plate-scanner",
   "title": "React Native Number Plate Scanner",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React Native Number Plate Scanner",
   "main": "index.js",
   "scripts": {
